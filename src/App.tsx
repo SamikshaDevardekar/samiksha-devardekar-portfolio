@@ -131,9 +131,9 @@ function App() {
     <main className="container">
       <section className="hero panel reveal">
         <div className="hero-grid">
-          <div>
+          <div className="hero-content">
             <div className="name-row">
-              <h2 className="name-animated">Samiksha Devardekar</h2>
+              <h1 className="name-animated">Samiksha Devardekar</h1>
               <p className="tag tag-desktop">Java Full Stack Developer</p>
             </div>
             <p className="tag tag-mobile">Java Full Stack Developer</p>

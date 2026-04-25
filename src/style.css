@@ -97,6 +97,11 @@ body {
   align-items: center;
 }
 
+.hero-content {
+  display: grid;
+  gap: 16px;
+}
+
 .tag {
   display: inline-block;
   margin: 0;
@@ -156,7 +161,7 @@ h1 {
 }
 
 .hero-actions {
-  margin-top: 24px;
+  margin-top: 0;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -558,6 +563,10 @@ li::marker {
     text-align: center;
   }
 
+  .hero-content {
+    gap: 14px;
+  }
+
   .name-row {
     justify-content: center;
   }
@@ -568,7 +577,7 @@ li::marker {
 
   .tag-mobile {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 0;
   }
 
   h1 {
@@ -591,6 +600,14 @@ li::marker {
 
   .hero-actions {
     justify-content: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .resume-btn,
+  .ghost-btn {
+    padding: 10px 16px;
+    font-size: 14px;
   }
   
   .cards {
