@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { FaJava, FaReact, FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaServer, FaDatabase } from 'react-icons/fa'
+import { FaJava, FaReact, FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaServer } from 'react-icons/fa'
 import { SiSpringboot, SiTypescript, SiTailwindcss, SiPostgresql } from 'react-icons/si'
 import { FiExternalLink, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi'
 
