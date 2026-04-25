@@ -1,18 +1,21 @@
 import { useEffect } from 'react'
+import { FaJava, FaReact, FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaServer, FaDatabase } from 'react-icons/fa'
+import { SiSpringboot, SiTypescript, SiTailwindcss, SiPostgresql } from 'react-icons/si'
+import { FiExternalLink, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi'
 
 const skills = [
-  'Java',
-  'Spring Boot',
-  'Microservices',
-  'REST APIs',
-  'PostgreSQL',
-  'React',
-  'TypeScript',
-  'Tailwind CSS',
-  'Git',
-  'GitHub',
-  'HTML',
-  'CSS',
+  { name: 'Java', icon: FaJava },
+  { name: 'Spring Boot', icon: SiSpringboot },
+  { name: 'Microservices', icon: FaServer },
+  { name: 'REST APIs', icon: FiExternalLink },
+  { name: 'PostgreSQL', icon: SiPostgresql },
+  { name: 'React', icon: FaReact },
+  { name: 'TypeScript', icon: SiTypescript },
+  { name: 'Tailwind CSS', icon: SiTailwindcss },
+  { name: 'Git', icon: FaGitAlt },
+  { name: 'GitHub', icon: FaGithub },
+  { name: 'HTML', icon: FaHtml5 },
+  { name: 'CSS', icon: FaCss3Alt },
 ]
 
 const strengths = [
@@ -27,35 +30,36 @@ const education = [
     period: '2021 - 2025',
     degree: 'B.Tech',
     school: "KIT's College of Engineering, Kolhapur",
-    grade: 'First class distinction (9.35/10)',
+    grade: 'Outstanding (9.49/10)',
   },
   {
     period: '2020 - 2021',
     degree: 'HSC',
     school: 'Shri. P. B. Patil Jr. College, Mudal',
-    grade: 'First class distinction (97.67%)',
+    grade: 'First class with distinction (97.67%)',
   },
   {
     period: '2018 - 2019',
     degree: 'SSC',
     school: 'Shri. M. V. Warake Highschool, Turambe',
-    grade: 'First class distinction (96.00%)',
+    grade: 'First class withdistinction (96.00%)',
   },
 ]
 
 const projects = [
   {
-    title: 'Fashion Recommendation System',
-    description: 'Built an intelligent fashion search platform using machine learning and deep learning to suggest personalized outfits and accessories from images.',
+    title: 'GenAI Based YouTube Video Summarizer',
+    description: 'A modular system that processes YouTube URLs to produce multilingual transcripts, AI-driven summaries,timestamps and audio output',
+  },
+  {
+    title: 'Dairy Farm Automation',
+    description: 'Developed responsive web interfaces for tracking cattle and calf data, including health, breeding and lifecycle records',
   },
   {
     title: 'Mental Health Tracker',
     description: 'Created a wellness web app with daily mood logging, activity tracking, and personalized insights to support consistent mental health habits.',
   },
-  {
-    title: 'Dairy Farm Automation',
-    description: 'Developed a livestock records platform with reusable React components, REST API integration, and validation-first data entry workflows.',
-  },
+
 ]
 
 const experience = [
@@ -91,7 +95,7 @@ function App() {
           }
         })
       },
-      { threshold: 0.2 },
+      { threshold: 0.15 },
     )
 
     revealedElements.forEach((element) => observer.observe(element))
@@ -128,8 +132,11 @@ function App() {
       <section className="hero panel reveal">
         <div className="hero-grid">
           <div>
-            <p className="tag">Java Full Stack Developer</p>
-            <h1 className="name-animated">Samiksha Devardekar</h1>
+            <div className="name-row">
+              <h2 className="name-animated">Samiksha Devardekar</h2>
+              <p className="tag tag-desktop">Java Full Stack Developer</p>
+            </div>
+            <p className="tag tag-mobile">Java Full Stack Developer</p>
             <p className="hero-subtitle">
               Building modern, scalable, and user-focused digital products with Java, Spring Boot,
               Microservices, React, and TypeScript.
@@ -149,7 +156,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                LinkedIn
+                <FiLinkedin size={18} style={{ marginRight: '6px' }} /> LinkedIn
               </a>
             </div>
           </div>
@@ -186,7 +193,7 @@ function App() {
         <h2>Projects</h2>
         <div className="cards">
           {projects.map((project) => (
-            <article key={project.title} className="card">
+            <article key={project.title} className="card project-card">
               <h3>{project.title}</h3>
               <p>{project.description}</p>
             </article>
@@ -198,8 +205,9 @@ function App() {
         <h2>Technical Skills</h2>
         <div className="skill-list">
           {skills.map((skill) => (
-            <span key={skill} className="skill-chip">
-              {skill}
+            <span key={skill.name} className="skill-chip">
+              <skill.icon size={16} className="skill-icon" />
+              {skill.name}
             </span>
           ))}
         </div>
@@ -207,9 +215,9 @@ function App() {
 
       <section className="panel reveal">
         <h2>Core Strengths</h2>
-        <div className="cards">
+        <div className="cards strengths-grid">
           {strengths.map((strength) => (
-            <article key={strength} className="card">
+            <article key={strength} className="card strength-card">
               <p>{strength}</p>
             </article>
           ))}
@@ -223,8 +231,8 @@ function App() {
             <article key={item.degree} className="card timeline-card">
               <h3>{item.degree}</h3>
               <p className="muted">{item.period}</p>
-              <p>{item.school}</p>
-              <p>{item.grade}</p>
+              <p className="edu-school">{item.school}</p>
+              <p className="edu-grade">{item.grade}</p>
             </article>
           ))}
         </div>
@@ -237,26 +245,22 @@ function App() {
           I can contribute to impactful products and continue growing as an engineer.
         </p>
       </section>
+      
       <div className="footer-icons reveal">
         <a href="https://www.linkedin.com/in/samiksha-devardekar-749343253" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.94 8.5H3.56V20h3.38V8.5Zm.22-3.54c0-1.07-.8-1.91-1.92-1.91S3.3 3.89 3.3 4.96c0 1.05.79 1.9 1.9 1.9h.02c1.13 0 1.94-.85 1.94-1.9ZM20.7 13.41c0-3.5-1.87-5.13-4.36-5.13-2.01 0-2.92 1.1-3.42 1.87V8.5H9.55c.04 1.09 0 11.5 0 11.5h3.37v-6.42c0-.34.03-.68.12-.92.27-.68.89-1.39 1.92-1.39 1.35 0 1.9 1.03 1.9 2.54V20h3.38v-6.59Z" />
-          </svg>
-          LinkedIn
+          <FiLinkedin size={18} />
+          <span>LinkedIn</span>
         </a>
         <a href="tel:9404581956" aria-label="Call">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19.95 15.39c-.32 0-1.57-.25-1.92-.32-.48-.1-.95.05-1.28.38l-1.4 1.4a14.92 14.92 0 0 1-8.2-8.2l1.4-1.4c.34-.34.48-.81.38-1.28-.07-.35-.32-1.6-.32-1.92A2.05 2.05 0 0 0 6.56 2H4.05C2.92 2 2 2.92 2 4.05 2 14.52 9.48 22 19.95 22 21.08 22 22 21.08 22 19.95v-2.51a2.05 2.05 0 0 0-2.05-2.05Z" />
-          </svg>
-          Call
+          <FiPhone size={18} />
+          <span>Call</span>
         </a>
         <a href="mailto:samikshadevardekar1956@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6.25L22 6.4V6a2 2 0 0 0-2-2Zm2 5.27-8.95 5.6a2 2 0 0 1-2.1 0L2 9.27V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9.27Z" />
-          </svg>
-          Email
+          <FiMail size={18} />
+          <span>Email</span>
         </a>
       </div>
+      
       <p className="site-footer reveal">
         © {new Date().getFullYear()} Samiksha Devardekar · <a href="mailto:samikshadevardekar1956@gmail.com">samikshadevardekar1956@gmail.com</a>
       </p>
