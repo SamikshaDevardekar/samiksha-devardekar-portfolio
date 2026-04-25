@@ -177,7 +177,21 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
+  min-height: 44px;
   font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ghost-btn .btn-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+.ghost-btn .btn-label {
+  display: inline-block;
+  line-height: 1;
 }
 
 .resume-btn {
@@ -608,9 +622,29 @@ li::marker {
   .ghost-btn {
     padding: 10px 16px;
     font-size: 14px;
+    min-height: 40px;
   }
   
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .timeline-panel .timeline-grid {
+    --timeline-x: 2px;
+    padding-left: 18px;
+    gap: 14px;
+  }
+
+  .timeline-panel .timeline-grid::before {
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .timeline-panel .timeline-grid::after {
+    height: 64px;
+  }
+
+  .timeline-card::before {
+    left: calc(var(--timeline-x) - 18px);
   }
 }

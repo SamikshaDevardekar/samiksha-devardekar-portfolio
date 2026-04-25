@@ -156,7 +156,8 @@ function App() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FiLinkedin size={18} style={{ marginRight: '6px' }} /> LinkedIn
+                <FiLinkedin size={18} className="btn-icon" />
+                <span className="btn-label">LinkedIn</span>
               </a>
             </div>
           </div>
