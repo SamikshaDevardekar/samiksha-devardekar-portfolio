@@ -28,7 +28,7 @@ const strengths = [
 const education = [
   {
     period: '2021 - 2025',
-    degree: 'B.Tech',
+    degree: 'B.Tech (CSE)',
     school: "KIT's College of Engineering, Kolhapur",
     grade: 'Outstanding (9.49/10)',
   },
