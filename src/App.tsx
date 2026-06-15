@@ -144,7 +144,7 @@ function App() {
             <div className="hero-actions">
               <a
                 className="resume-btn"
-                href="https://drive.google.com/file/d/1YHcDHq5_tfoS3lDu7JNqeHpA_dPTGPuQ/view?usp=drivesdk"
+                href="https://drive.google.com/file/d/18LDOLHguSOi-UxnerBQw9pepXpMp3Z36/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
               >
